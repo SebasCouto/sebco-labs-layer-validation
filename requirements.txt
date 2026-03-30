@@ -1,8 +1,35 @@
+# ----------------------------
+# Testing
+# ----------------------------
 pytest
 pytest-html
 python-dateutil
 
-
-# Agrega otras dependencias según sea necesario
-
+# ----------------------------
+# Mutation testing
+# ----------------------------
 mutmut
+
+# ----------------------------
+# PDF processing (core)
+# ----------------------------
+pdfplumber
+PyPDF2
+
+# ----------------------------
+# OCR (optional)
+# ----------------------------
+pytesseract
+pdf2image
+Pillow
+
+# ----------------------------
+# Database (optional)
+# ----------------------------
+psycopg2-binary
+
+# ----------------------------
+# UI / E2E (optional)
+# ----------------------------
+selenium
+webdriver-manager
