@@ -3,7 +3,7 @@ from pathlib import Path
 
 import pytest
 
-from lib_core.pdf_utils import (
+from lib_core.documents.pdf_utils import (
     assert_contains_text,
     extract_full_text,
     get_page_count,
@@ -20,7 +20,7 @@ from tests.mocks.report_march_2025_mocks import (
 pytestmark = pytest.mark.regression
 
 
-PDF_PATH = Path("tests/labs/resources/sebco_labs_monthly_report.pdf")
+PDF_PATH = Path("tests/resources/sebco_labs_monthly_report.pdf")
 
 
 def _money_to_pdf_format(value: str) -> str:
@@ -47,10 +47,7 @@ class TestStatementMarch2025Regression:
         account = account_data["account"]
 
         assert_contains_text(PDF_PATH, account_data["holder_name"])
-        assert_contains_text(
-            PDF_PATH,
-            f'{statement["period_start"]} - {statement["period_end"]}',
-        )
+        assert_contains_text(PDF_PATH, f'{statement["period_start"]} - {statement["period_end"]}',)
         assert_contains_text(PDF_PATH, account_data["document_number"])
         assert_contains_text(PDF_PATH, account["cbu"])
         assert_contains_text(PDF_PATH, account["account_number"])
@@ -66,10 +63,7 @@ class TestStatementMarch2025Regression:
     def test_mock_balance_formula_is_consistent(self):
         statement = CUENTA_USUARIO_MOCK["data"]["statement"]
         totals = calculate_totals(MOVIMIENTOS_MOCK)
-        calculated_closing_balance = calculate_closing_balance(
-            statement["opening_balance"],
-            MOVIMIENTOS_MOCK,
-        )
+        calculated_closing_balance = calculate_closing_balance(statement["opening_balance"],MOVIMIENTOS_MOCK,)
 
         assert totals["money_in_total"] == Decimal(statement["money_in_total"])
         assert totals["money_out_total"] == Decimal(statement["money_out_total"])
