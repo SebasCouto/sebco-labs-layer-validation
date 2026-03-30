@@ -1,0 +1,8 @@
+pytest
+pytest-html
+python-dateutil
+
+
+# Agrega otras dependencias según sea necesario
+
+mutmut

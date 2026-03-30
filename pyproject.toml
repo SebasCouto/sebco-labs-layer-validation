@@ -1,0 +1,11 @@
+[tool.mutmut]
+paths_to_mutate = [
+  "lib_core/time_utils"
+]
+tests_dir = [
+  "tests"
+]
+runner = "python -m pytest -m regression -q"
+do_not_mutate = [
+  "__init__.py"
+]

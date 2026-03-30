@@ -1,0 +1,11 @@
+# Ignorar archivos .DS_Store
+.DS_Store
+
+# Ignorar directorios
+.vscode/
+.pytest_cache/
+.venv/
+.idea/
+tech_red_qa.egg-info/
+__pycache__/
+report/
