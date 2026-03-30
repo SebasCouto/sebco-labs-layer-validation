@@ -20,7 +20,7 @@ from tests.mocks.report_march_2025_mocks import (
 pytestmark = pytest.mark.regression
 
 
-PDF_PATH = Path("lib_core/documents/Extracto_SebCo_Labs_reporte_template_final.pdf")
+PDF_PATH = Path("tests/labs/resources/sebco_labs_monthly_report.pdf")
 
 
 def _money_to_pdf_format(value: str) -> str:
